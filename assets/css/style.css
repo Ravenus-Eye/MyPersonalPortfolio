@@ -1,0 +1,530 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+:root {
+    --bgimage: url("/assets/images/abstract-wavy-purple-and-pink-gradient-background-design-sr31012402.jpg");
+    --fontcolor: #ffffff;
+    --headerbg: rgba(0, 0, 0, 0);
+    --bgfilter: brightness(1);
+    --bdfilter: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    /* height: auto; */
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: var(--bgimage);
+    color: var(--fontcolor);
+    /* backdrop-filter: var(--bgfilter); */
+    /* -webkit-backdrop-filter: var(--bgfilter); */
+}
+
+.light-mode {
+    --bgimage: url("/assets/images/new-york_lbAbZZKZG.webp");
+    --fontcolor: black;
+    --headerbg: rgba(255, 255, 255, 0.548);
+    --bdfilter: hue-rotate(29deg);
+    /* --bgfilter: invert(0.7); */
+}
+
+.hide {
+    display: none !important;
+}
+
+.diplay {
+    display: flex !important;
+}
+
+h2 {
+    font-weight: bolder;
+}
+
+.header {
+    display: flex;
+    border-radius: 2rem;
+    padding: 0 40px 0 30px;
+    background-color: var(--headerbg);
+    backdrop-filter: blur(5px);
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    height: 7vh;
+    justify-content: space-between;
+    margin: 0 10px 0 10px;
+}
+
+.left-header,
+.right-header {
+    gap: 4rem;
+    display: flex;
+    display:flex;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+.mode {
+    gap: 5px;
+}
+
+.left-header,
+.right-header,
+.mode {
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#nav>ul {
+    display: flex;
+    gap: 2rem;
+}
+
+#nav>ul>li {
+    list-style: none;
+}
+
+#nav>ul>li>a {
+    text-decoration: none;
+}
+
+#home{
+    display: flex;
+    border-radius: 1rem;
+    /* backdrop-filter: blur(1px); */
+    /* background-color: #6e6e6e45;
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px; */
+    height: 841px;
+    margin: 20px;
+}
+
+#about-me,
+#project {
+    border-radius: 1rem;
+    /* backdrop-filter: blur(1px); */
+    background-color: #6e6e6e45;
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    height: 841px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+} 
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    /* gap: 52px; */
+    justify-content: center;
+}
+
+.profile>img {	
+    /* animation: fade-in 5s linear infinite; */
+    filter:drop-shadow(2px 4px 6px black);
+	transition: .3s ease-in-out;
+    width: 360px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;   
+       
+      
+}
+
+
+@keyframes flip {
+	0% {
+		transform: perspective(700px) rotateY(0);
+		animation-timing-function: ease-out;
+	}
+	40% {
+		transform: perspective(700px) translateZ(150px) rotateY(170deg);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: perspective(700px) translateZ(150px) rotateY(190deg) scale(1);
+		animation-timing-function: ease-in;
+	}
+	80% {
+		transform: perspective(700px) rotateY(360deg) scale(.95);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: perspective(700px) scale(1);
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+img:hover{
+    backface-visibility: visible !important;
+	animation: flip 2s ease infinite;
+}
+
+.about-me,
+.profile {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile>div,
+.about-me>div {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: var(--headerbg);
+    backdrop-filter: var(--bdfilter);
+}
+
+.profile>div {
+    margin: 20px 60px 60px 60px;
+}
+
+.about-me>div {
+    margin: 60px;
+}
+
+.title>p {
+    font-size: 50px;
+    font-weight: bolder;
+    /* text-align: center; */
+}
+
+.about-me>div>p:nth-child(2) {
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+
+.about-me>div>p:last-child {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.about-me>div>p:first-child {
+    font-weight: 600;
+    font-size: 100px;
+}
+h1 {
+    font-size: 5em;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+  
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+/* For toggle switch */
+/* checkbox settings 👇 */
+
+.switch {
+    /* global */
+    --total_transition_duration: .3s;
+    /* switch */
+    --slider_width: 2.875em;
+    --slider_height: 1.5em;
+    --slider_light_bg: linear-gradient(90deg, #f32a85 0%, #f19d36 100%);
+    --slider_night_bg: linear-gradient(90deg, #1701a1 0%, #af0693 75%);
+    --slider_offset: calc((var(--slider_height) - var(--circle_diameter)) / 2);
+    --slider_radius: calc(var(--slider_height) / 2);
+    /* circle */
+    --circle_diameter: 1.125em;
+    --circle_rotation: 360deg;
+    /* svg */
+    --svg_width: var(--circle_diameter);
+    --sun-color: #fff;
+    --moon-color: #fff;
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider svg {
+    position: absolute;
+    height: auto;
+    color: var(--svg-color);
+    transition: var(--total_transition_duration) ease;
+    width: 100%;
+  }
+  
+  .circle svg.sun {
+    transform: scale(1);
+    color: var(--sun-color);
+  }
+  
+  .circle svg.moon {
+    transform: scale(0);
+    color: var(--moon-color);
+    width: calc(100% - 2px);
+  }
+  
+  .slider {
+    display: inline-block;
+    width: var(--slider_width);
+    height: var(--slider_height);
+    border-radius: var(--slider_radius);
+    position: relative;
+    cursor: pointer;
+    transition: var(--total_transition_duration) ease;
+    overflow: hidden;
+  }
+  
+  .slider::before,
+  .slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transition: var(--total_transition_duration) ease;
+  }
+  
+  /* ::before and ::after backgrounds are needed for smooth 
+  transition of gradients otherwise there is no way :\ */
+  .slider::before {
+    opacity: 0;
+    background: var(--slider_night_bg);
+  }
+  
+  .slider::after {
+    opacity: 1;
+    background: var(--slider_light_bg);
+  }
+  
+  /* ------------ */
+  
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--circle_diameter);
+    height: var(--circle_diameter);
+    position: absolute;
+    top: var(--slider_offset);
+    left: var(--slider_offset);
+    transition: var(--total_transition_duration) ease;
+    z-index: 10;
+  }
+  
+  /* actions */
+  
+  .switch input:checked+.slider::before {
+    opacity: 1;
+  }
+  
+  .switch input:checked+.slider::after {
+    opacity: 0;
+  }
+  
+  .switch input:active+.slider .circle {
+    transform: scale(0.9);
+  }
+  
+  .switch input:checked+.slider .circle {
+    left: calc(100% - var(--circle_diameter) - var(--slider_offset));
+  }
+  
+  .switch input:checked+.slider .sun {
+    transform: scale(0) rotate(var(--circle_rotation));
+  }
+  
+  .switch input:checked+.slider .moon {
+    transform: scale(1) rotate(var(--circle_rotation));
+  }
+
+  /* For Contact me button */
+
+  button {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    color: #fff;
+    width: 9em;
+    height: 3em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 300%;
+    border-radius: 30px;
+    z-index: 1;
+  }
+  
+  button:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+  }
+  
+  @keyframes ani {
+    0% {
+      background-position: 0%;
+    }
+  
+    100% {
+      background-position: 400%;
+    }
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+  }
+  
+  button:hover::before {
+    filter: blur(20px);
+  }
+  
+  button:active {
+    background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  }
+  /* checkbox settings 👇 */
+
+.switch {
+  /* global */
+  --total_transition_duration: .3s;
+  /* switch */
+  --slider_width: 2.875em;
+  --slider_height: 1.5em;
+  --slider_light_bg: linear-gradient(90deg, #f32a85 0%, #f19d36 100%);
+  --slider_night_bg: linear-gradient(90deg, #1701a1 0%, #af0693 75%);
+  --slider_offset: calc((var(--slider_height) - var(--circle_diameter)) / 2);
+  --slider_radius: calc(var(--slider_height) / 2);
+  /* circle */
+  --circle_diameter: 1.125em;
+  --circle_rotation: 360deg;
+  /* svg */
+  --svg_width: var(--circle_diameter);
+  --sun-color: #fff;
+  --moon-color: #fff;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider svg {
+  position: absolute;
+  height: auto;
+  color: var(--svg-color);
+  transition: var(--total_transition_duration) ease;
+  width: 100%;
+}
+
+.circle svg.sun {
+  transform: scale(1);
+  color: var(--sun-color);
+}
+
+.circle svg.moon {
+  transform: scale(0);
+  color: var(--moon-color);
+  width: calc(100% - 2px);
+}
+
+.slider {
+  display: inline-block;
+  width: var(--slider_width);
+  height: var(--slider_height);
+  border-radius: var(--slider_radius);
+  position: relative;
+  cursor: pointer;
+  transition: var(--total_transition_duration) ease;
+  overflow: hidden;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: var(--total_transition_duration) ease;
+}
+
+/* ::before and ::after backgrounds are needed for smooth 
+transition of gradients otherwise there is no way :\ */
+.slider::before {
+  opacity: 0;
+  background: var(--slider_night_bg);
+}
+
+.slider::after {
+  opacity: 1;
+  background: var(--slider_light_bg);
+}
+
+/* ------------ */
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--circle_diameter);
+  height: var(--circle_diameter);
+  position: absolute;
+  top: var(--slider_offset);
+  left: var(--slider_offset);
+  transition: var(--total_transition_duration) ease;
+  z-index: 10;
+}
+
+/* actions */
+
+.switch input:checked+.slider::before {
+  opacity: 1;
+}
+
+.switch input:checked+.slider::after {
+  opacity: 0;
+}
+
+.switch input:active+.slider .circle {
+  transform: scale(0.9);
+}
+
+.switch input:checked+.slider .circle {
+  left: calc(100% - var(--circle_diameter) - var(--slider_offset));
+}
+
+.switch input:checked+.slider .sun {
+  transform: scale(0) rotate(var(--circle_rotation));
+}
+
+.switch input:checked+.slider .moon {
+  transform: scale(1) rotate(var(--circle_rotation));
+}
