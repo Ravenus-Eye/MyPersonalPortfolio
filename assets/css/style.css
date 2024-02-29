@@ -6,6 +6,8 @@
     --headerbg: rgba(0, 0, 0, 0);
     --bgfilter: brightness(1);
     --bdfilter: none;
+    --tbcbg: 0, 0, 0;
+    --tbcshadow: 255, 255, 255;
 }
 
 * {
@@ -30,11 +32,18 @@ body {
     /* -webkit-backdrop-filter: var(--bgfilter); */
 }
 
+a {
+    color: var(--fontcolor);
+    text-decoration: none;
+}
+
 .light-mode {
     --bgimage: url("/assets/images/new-york_lbAbZZKZG.webp");
     --fontcolor: black;
     --headerbg: rgba(255, 255, 255, 0.548);
     --bdfilter: hue-rotate(29deg);
+    --tbcbg: 255, 255, 255;
+    --tbcshadow: 0, 0, 0;
     /* --bgfilter: invert(0.7); */
 }
 
@@ -59,7 +68,7 @@ h2 {
     box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
     height: 7vh;
     justify-content: space-between;
-    margin: 0 10px 0 10px;
+    margin: 0 40px 0 40px;
 }
 
 .left-header,
@@ -102,19 +111,15 @@ h2 {
 #home{
     display: flex;
     border-radius: 1rem;
-    /* backdrop-filter: blur(1px); */
-    /* background-color: #6e6e6e45;
-    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px; */
-    height: 841px;
+    height: 770px;
     margin: 20px;
 }
 
-#about-me,
-#project {
-    border-radius: 1rem;
+.tab {
+    /* border-radius: 1rem; */
     /* backdrop-filter: blur(1px); */
-    background-color: #6e6e6e45;
-    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    /* background-color: #6e6e6e45; */
+    /* box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px; */
     height: 841px;
     margin: 20px;
     display: flex;
@@ -125,22 +130,28 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
     width: 90vw;
-    /* gap: 52px; */
+    margin: 60px;
     justify-content: center;
+    height: 100%;
 }
 
-.profile>img {	
+.profile>div>img {
     /* animation: fade-in 5s linear infinite; */
     filter:drop-shadow(2px 4px 6px black);
 	transition: .3s ease-in-out;
     width: 360px;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;   
+     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
+     rgba(0, 0, 0,  0.1) 0px -79px 40px 0px inset, 
+     rgba(0, 0, 0, 0.06) 0px 2px 1px, 
+     rgba(0, 0, 0, 0.09) 0px 4px 2px,
+     rgba(0, 0, 0, 0.09) 0px 8px 4px, 
+     rgba(0, 0, 0, 0.09) 0px 16px 8px, 
+     rgba(0, 0, 0, 0.09) 0px 32px 16px;   
        
-      
 }
 
 
@@ -177,14 +188,59 @@ img:hover{
 	animation: flip 2s ease infinite;
 }
 
-.about-me,
+hr {
+  border: solid var(--fontcolor) 1px;
+}
+
+.soc-med {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 60px;
+  gap: 15px;
+}
+
+.soc-med>svg {
+  border: white 2px solid;
+  border-radius: 25%;
+  padding: 4px;
+  height: fit-content;
+  width: fit-content;
+}
+
 .profile {
     font-size: 20px;
     display: flex;
     align-items: center;
 }
 
-.profile>div,
+.tab-header-cont {
+  margin-bottom: 5px;
+}
+
+.tab-header {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.tab-body-cont {
+  border: rgb(var(--tbcshadow)) 1px dashed;
+  height: 680px;
+  border-radius: 1rem;
+  background-color: rgba(var(--tbcbg), 0.4);
+  box-shadow: rgba(var(--tbcshadow), 0.25) 0px 54px 55px, 
+              rgba(var(--tbcshadow), 0.12) 0px -12px 30px, 
+              rgba(var(--tbcshadow), 0.12) 0px 4px 6px, 
+              rgba(var(--tbcshadow), 0.17) 0px 12px 13px, 
+              rgba(var(--tbcshadow), 0.09) 0px -3px 5px;
+}
+
+.tab-body {
+  padding: 15px;
+}
+
+.title,
 .about-me>div {
     padding: 20px;
     display: flex;
@@ -193,14 +249,20 @@ img:hover{
     border-radius: 1rem;
     background-color: var(--headerbg);
     backdrop-filter: var(--bdfilter);
+    width: 100%;
 }
 
-.profile>div {
-    margin: 20px 60px 60px 60px;
-}
 
-.about-me>div {
+
+.about-me {
     margin: 60px;
+}
+
+.title {
+    height: 23%;
+    padding: 20px;
+    display: flex;
+    align-items: baseline;
 }
 
 .title>p {
@@ -223,13 +285,15 @@ img:hover{
     font-weight: 600;
     font-size: 100px;
 }
+
+
 h1 {
     font-size: 5em;
     color: white;
     text-transform: uppercase;
   }
   
-  span {
+  .wrap {
     border-right: .05em solid;
     animation: caret 1s steps(1) infinite;
   }
