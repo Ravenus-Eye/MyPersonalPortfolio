@@ -1,32 +1,42 @@
-var state = 2;
+// For Color Mode
+var state = localStorage.getItem("mode");
+if(state == null || state == "") {
+    state = 2;
+    localStorage.setItem("mode", state)
+}
+
+loadScreen(state);
+
+function loadScreen(state) {
+    var mode = document.querySelector("#mode")
+    console.log("loadScreen");
+    const body = document.querySelector("body")
+    if(state == 1) {
+        body.classList.remove("light-mode")
+        mode.checked = false;
+
+    } else if(state == 2) {
+        body.classList.add("light-mode")
+        mode.checked = true;
+    }
+}
+
 function changeMode() {
-    const body = document.querySelector("body");
+    state = localStorage.getItem("mode")
     if(state == 1) {
         console.log("darkmode")
-        body.classList.remove("light-mode")
         state = 2;
     } else if(state == 2) {
         console.log("lightmode")
-        body.classList.add("light-mode")
         state = 1;
     }
+    localStorage.setItem("mode", state)
+    loadScreen(state);
+    location.reload()
 }
 
-function displayTab(index) {
-    console.log(index)
-    var tab = document.querySelectorAll(".tab");
-    console.log(tab)
-    for(let i=0; i<tab.length; i++) {
-        console.log("index-" + i + ": " + tab[i].className)
-        if(i == index) {
-            tab.className = "tab display";
-        } else {
-            tab.className = "tab hide";
-        }
-    }
-    console.log(tab)
-}
 
+// For Title Text Animation
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -80,6 +90,11 @@ window.onload = function() {
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff }";
+    console.log("cursor: ", document.querySelector("#mode").checked)
+    if(document.querySelector("#mode").checked) {
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #000 }";
+    } else {
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff }";
+    }
     document.body.appendChild(css);
 };
